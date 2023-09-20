@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enclosure Details</title>
+</head>
+<body>
+    <h1>Enclosure Details</h1>
+    <ul>
+        <li>ID: {{ enclosure.id }}</li>
+        <li>Environment: {{ enclosure.environment }}</li>
+        <li>Open to Visitors: {{ "Yes" if enclosure.open_to_visitors else "No" }}</li>
+    </ul>
+    <h2>Animals in this Enclosure:</h2>
+    <ul>
+        {% for animal in enclosure.animals %}
+            <li>{{ animal.name }} ({{ animal.species }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
